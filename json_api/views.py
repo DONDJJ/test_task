@@ -19,7 +19,7 @@ class PostList(APIView):
         serializer = PostSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"server_response":"Everything is fine"}, status=status.HTTP_200_OK)
+            return Response({"server_response":"Everything is fine"}, status=status.HTTP_201_CREATED)
 
             # return Response(serializer.data, status=status.HTTP_200_OK)  # или так
         else:
